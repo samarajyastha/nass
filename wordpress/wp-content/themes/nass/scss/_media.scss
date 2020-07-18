@@ -1,0 +1,89 @@
+@media (min-width: 992px) {
+    .animate {
+        animation-duration: 0.3s;
+        -webkit-animation-duration: 0.3s;
+        animation-fill-mode: both;
+        -webkit-animation-fill-mode: both;
+    }
+   
+}
+@media(max-width:991px){
+    .school-features .feature-list ul li {
+        width: 18%;
+        flex-basis: 18%;
+    }
+}
+
+
+@media(max-width: 768px) {
+    .school-features .feature-list ul li {
+       
+        flex-basis: 22%;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    .navbar-brand {
+        width: auto;
+
+        img {
+            width: 250px;
+        }
+    }
+
+    .testimonials {
+        .single-testimonial {
+            blockquote {
+                p {
+                    text-align: justify;
+                    color: $white;
+                    font-size: 18px;
+                    padding: 0;
+                }
+            }
+
+            blockquote::before {
+                display: none;
+
+            }
+
+            blockquote::after {
+                display: none;
+
+            }
+
+            .testimonial-img {
+                padding-right: 20px;
+                text-align: center;
+
+                img {
+                    max-width: 100px;
+                }
+            }
+
+            .testimonial-info {
+                text-align: center;
+                border: none;
+                padding-top: 20px;
+                padding-bottom: 20px;
+
+                h4 {
+                    font-size: 24px;
+                    color: lighten($yellow, $amount: 25);
+                }
+
+                h5 {
+                    font-weight: normal;
+                    font-size: 16px;
+                    color: $white;
+
+                }
+            }
+        }
+    }
+    .school-features .feature-list ul li {
+       
+        flex-basis: 38%;
+    }
+}

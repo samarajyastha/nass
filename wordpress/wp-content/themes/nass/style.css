@@ -1,0 +1,20 @@
+/* 
+    Theme Name: Nass Theme
+    Author: Sam
+*/
+
+ .navbar-brand{
+    height: 71px;
+    float: left;
+}
+.navbar-brand img{
+    max-height: 100%;
+    width: auto;    
+}  
+
+.notice a{
+    color: #fff;
+}
+.notice a:hover{
+    color: green;
+}

@@ -1,0 +1,603 @@
+html,
+body {
+	font-family: "Roboto", "sans-serif";
+	height: 100%;
+}
+
+/* -------------TOP HEADER -------------------------*/
+.top-header {
+	background: $main-color;
+	height: 35px;
+
+	.header-left,
+	.header-right {
+		padding: 3px 0;
+
+		ul {
+			display: inline-block;
+			margin-bottom: 0;
+			padding-inline-start: 0;
+		}
+
+		li:before {
+			content: "";
+			height: 14px;
+			width: 1px;
+			background: #fff;
+			position: absolute;
+			right: 15px;
+			top: 3px;
+		}
+
+		li {
+			padding-right: 30px;
+			position: relative;
+			display: inline-block;
+			color: #fff;
+			position: relative;
+			font-size: 13px;
+
+			a {
+				color: #fff;
+				text-decoration: none;
+				transition: color 0.3s;
+			}
+
+			a:hover {
+				color: darken($main-color, 15%);
+				transition: color 0.3s;
+			}
+
+			i {
+				margin-right: 6px;
+			}
+		}
+
+		li:last-child {
+			padding-right: 0;
+		}
+
+		li:last-child:before {
+			display: none;
+		}
+	}
+
+	.header-right {
+		text-align: right;
+
+		li:before {
+			content: "";
+			height: 14px;
+			width: 1px;
+			background: darken($main-color, 5%);
+			position: absolute;
+			right: 5px;
+			top: 3px;
+		}
+
+		li {
+			padding-right: 10px;
+			position: relative;
+			display: inline-block;
+			color: #fff;
+			position: relative;
+			font-size: 13px;
+		}
+	}
+}
+#search {
+	z-index: 99999999;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+
+	-webkit-transform: translate(0px, -100%) scale(0, 0);
+	-moz-transform: translate(0px, -100%) scale(0, 0);
+	-o-transform: translate(0px, -100%) scale(0, 0);
+	-ms-transform: translate(0px, -100%) scale(0, 0);
+	transform: translate(0px, -100%) scale(0, 0);
+
+	opacity: 0;
+}
+
+#search.open {
+	-webkit-transform: translate(0px, 0px) scale(1, 1);
+	-moz-transform: translate(0px, 0px) scale(1, 1);
+	-o-transform: translate(0px, 0px) scale(1, 1);
+	-ms-transform: translate(0px, 0px) scale(1, 1);
+	transform: translate(0px, 0px) scale(1, 1);
+	opacity: 1;
+}
+
+#search input[type="search"] {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	color: rgb(255, 255, 255);
+	background: rgba(0, 0, 0, 0);
+	font-size: 60px;
+	font-weight: 300;
+	text-align: center;
+	border: 0px;
+	margin: 0px auto;
+	margin-top: -51px;
+	padding-left: 30px;
+	padding-right: 30px;
+	outline: none;
+}
+#search .search-button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: 61px;
+	margin-left: -45px;
+}
+#search .close {
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	color: #fff;
+	background-color: #428bca;
+	border-color: #357ebd;
+	opacity: 1;
+	padding: 10px 17px;
+	font-size: 27px;
+}
+/* -------------NAV BAR -------------------------*/
+.navbar {
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	.main-menu {
+		text-transform: uppercase;
+
+		.navbar-nav {
+			.nav-item {
+				a {
+					padding: 10px;
+					font-size: 14px;
+					font-weight: 500;
+					position: relative;
+					transition: color 0.3s;
+				}
+
+				a:hover {
+					color: $main-color;
+					transition: color 0.3s;
+				}
+
+				.dropdown-toggle::after {
+					border: none;
+					font-weight: 900;
+					font-family: "Font Awesome 5 Free";
+					vertical-align: middle;
+					content: "\f107";
+					font-size: 13px;
+					transition: transform 0.15s linear;
+				}
+
+				.dropdown-toggle > span.caret {
+					display: none;
+				}
+
+				.dropdown-menu {
+					border: 0;
+					border-top: 2px solid #0d9948;
+					border-radius: 0;
+					top: 92%;
+					transition: all 0.3s ease 0s;
+					box-shadow: 0 0.15rem 1.75rem 0 rgba(33, 37, 41, 0.15) !important;
+				}
+			}
+
+			.active > .nav-link {
+				color: darken($main-color, 8%);
+				background-color: none !important;
+				transition: color 0.3s;
+			}
+
+			.show {
+				.nav-link {
+					color: $main-color;
+				}
+			}
+
+			.animation::after {
+				content: "";
+				display: block;
+				width: 0;
+				height: 2px;
+				background: $main-color;
+				transition: width 0.3s;
+			}
+
+			.animation:hover::after {
+				width: 100%;
+				transition: width 0.3s;
+			}
+		}
+	}
+}
+
+
+
+.show.dropdown .dropdown-toggle::after {
+	transform: translateY(3px);
+}
+
+/* --------------------------Notice Board -------------------------*/
+.notice-board {
+	background: $main-color;
+	.notice {
+		position: relative;
+		overflow: hidden;
+		height: 50px;
+		color: #fff;
+		.notice-heading {
+			position: absolute;
+
+			top: 0;
+			left: 0;
+			height: 50px;
+			padding: 0 20px;
+			z-index: 10;
+			display: inline-block;
+			line-height: 50px;
+			background: darken($main-color, 8%);
+			font-weight: bold;
+		}
+		.carouselTicker__list {
+			padding: 0;
+			list-style-type: none;
+			overflow: hidden;
+		}
+
+		.carouselTicker__item {
+			margin: 0 0 0 5px;
+			float: left;
+			width: auto;
+			text-align: center;
+		}
+
+		.carouselTicker__loader {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+		}
+
+		.notice-details {
+			line-height: 50px;
+			height: 50px;
+
+			float: right;
+			ul {
+				li {
+					padding-right: 40px;
+
+					a {
+						color: #fff;
+					}
+					a:hover {
+					}
+				}
+				li::before {
+					content: "■";
+					height: 10px;
+					width: 10px;
+					position: absolute;
+					line-height: 45px;
+					text-indent: -33px;
+				}
+				li:last-child {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+}
+/*Carousle */
+.main-carousel {
+}
+
+/*carousel ends */
+/* Change this breakpoint if you change the breakpoint of the navbar */
+
+@keyframes slideIn {
+	0% {
+		transform: translateY(1rem);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0rem);
+		opacity: 1;
+	}
+
+	0% {
+		transform: translateY(1rem);
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes slideIn {
+	0% {
+		-webkit-transform: transform;
+		-webkit-opacity: 0;
+	}
+
+	100% {
+		-webkit-transform: translateY(0);
+		-webkit-opacity: 1;
+	}
+
+	0% {
+		-webkit-transform: translateY(1rem);
+		-webkit-opacity: 0;
+	}
+}
+
+.slideIn {
+	-webkit-animation-name: slideIn;
+	animation-name: slideIn;
+}
+
+/* Other styles for the page not related to the animated dropdown */
+
+.section {
+	.about-image {
+	}
+
+	.about-description {
+	}
+
+	h1 {
+		overflow: hidden;
+		text-align: center;
+		font-size: 42px;
+		font-weight: 500;
+		color: $main-color;
+		margin-bottom: 20px;
+		font-family: "Garamond";
+	}
+
+	h1:before,
+	h1:after {
+		background-color: $gray-300;
+		content: "";
+		display: inline-block;
+		height: 1px;
+		position: relative;
+		vertical-align: middle;
+		width: 50%;
+	}
+
+	h1:before {
+		right: 0.5em;
+		margin-left: -50%;
+	}
+
+	h1:after {
+		left: 0.5em;
+		margin-right: -50%;
+	}
+
+	p {
+		line-height: 1.8;
+		font-size: 15px;
+		color: $gray-800;
+		font-weight: 300;
+	}
+
+	.btn {
+		margin: 0;
+	}
+
+	h4 {
+		color: $main-color;
+	}
+	h5 {
+		color: $main-color;
+	}
+}
+
+/*School News*/
+.news-events {
+	.news-block {
+		border-bottom: 1px dotted $gray-300;
+		padding-top: 0;
+	}
+	.news-block ~ .news-block {
+		padding-top: 20px;
+	}
+	.news-block:last-of-type {
+		border: none;
+	}
+	.news-date {
+		font-size: 12px;
+		color: $gray-500;
+		i {
+			margin-right: 5px;
+			color: $red;
+		}
+		span {
+			margin-right: 10px;
+		}
+	}
+}
+
+/*testimonials*/
+.owl-testimonial {
+	.owl-stage-outer {
+		.owl-stage {
+			background-color: darken($color: $main-color, $amount: 5);
+		}
+	}
+}
+
+.testimonials {
+	background-color: darken($color: $main-color, $amount: 5);
+
+	.single-testimonial {
+		blockquote {
+			p {
+				text-align: justify;
+				padding-left: 100px;
+				padding-right: 100px;
+				color: set-text-color($main-color);
+				font-size: 18px;
+			}
+		}
+
+		blockquote::before {
+			display: block;
+			padding-left: 20px;
+			font-family: Georgia, serif;
+			content: "\201C";
+			font-size: 250px;
+			position: absolute;
+			left: -20px;
+			top: -100px;
+			color: lighten($main-color, $amount: 3);
+			font-style: normal;
+		}
+
+		blockquote::after {
+			display: block;
+			padding-left: 20px;
+			font-family: Georgia, serif;
+			content: "\201D";
+			font-size: 250px;
+			position: absolute;
+			right: 0px;
+			bottom: -220px;
+			color: lighten($main-color, $amount: 3);
+			font-style: normal;
+		}
+
+		.testimonial-img {
+			padding-right: 20px;
+			text-align: right;
+
+			img {
+				max-width: 100px;
+				display: initial;
+			}
+		}
+
+		.testimonial-info {
+			border-left: 4px darken($main-color, $amount: 4) solid;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			text-align: left;
+
+			h4 {
+				font-size: 24px;
+				color: lighten($yellow, $amount: 25);
+			}
+
+			h5 {
+				font-weight: normal;
+				font-size: 16px;
+				color: $white;
+			}
+		}
+	}
+}
+
+/*school-features*/
+.school-features {
+	background-color: rgba(0, 0, 0, 0.7);
+	h1 {
+		color: $white;
+	}
+
+	.feature-list {
+		margin: 0 auto;
+
+		ul {
+			padding-left: 0;
+			text-align: center;
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+
+			li {
+				display: inline-block;
+				padding: 0;
+				list-style: none;
+				color: $gray-700;
+				font-size: 14px;
+				font-weight: 600;
+				width: 720%;
+				flex-basis: 15%;
+				flex-grow: 1;
+				text-align: center;
+				margin: 10px;
+				margin-bottom: 20px;
+
+				svg {
+					max-width: 75px;
+					fill: $white;
+					margin-bottom: 10px;
+				}
+
+				h5 {
+					font-size: 14px;
+					color: $white;
+					line-height: 40px;
+				}
+			}
+		}
+	}
+}
+
+.parallax {
+	/* The image used */
+	background-image: url("../img/parallax.jpg");
+
+	/* Full height */
+	height: auto;
+
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* Global*/
+.card {
+	.card-body {
+		.card-text {
+			line-height: 1.8;
+			font-size: 15px;
+			color: $gray-800;
+			font-weight: 300;
+		}
+	}
+}
+
+.pt-60 {
+	padding-top: 60px;
+}
+
+.pb-60 {
+	padding-bottom: 60px;
+}
+
+.btn {
+	border-radius: 0;
+	font-size: 14px;
+	text-transform: none;
+}
